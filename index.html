@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adorei News | Fofocas</title>
+    <title>DexZ Bot</title>
     <!-- Favicon -->
     <link rel="icon" href="https://ustreggl.sirv.com/ADOREI%20ENCAPSULADOS_20240201_003033_0000.png" type="image/x-icon" />
     <!-- Font Awesome icons -->
@@ -22,47 +22,58 @@
     <!-- End of Parallax Pixel Background Animation -->
 
     <a id="profilePicture" href="#popup">
-      <img src="https://ustreggl.sirv.com/ADOREI%20ENCAPSULADOS_20240201_003033_0000.png" alt="Profile Picture">
+      <img src="https://telegra.ph/file/116ecb2e3c50b997f0401.jpg" alt="Profile Picture">
     </a>
-
-    
 
     <div class="overlay" id="popup">
       <div class="popup">
         <div class="popup-photo">
-          <a href="https://ustreggl.sirv.com/ADOREI%20ENCAPSULADOS_20240201_003033_0000.png" target="_blank">
-            <img src="https://ustreggl.sirv.com/ADOREI%20ENCAPSULADOS_20240201_003033_0000.png" alt="Profile Picture">
+          <a href="https://telegra.ph/file/116ecb2e3c50b997f0401.jpg" target="_blank">
+            <img src="https://telegra.ph/file/116ecb2e3c50b997f0401.jpg" alt="Profile Picture">
           </a>
         </div>
         <div class="popup-quote">
-          Olá, a Adorei News é uma rede de informações e fofocas do mundo e dos famosos! Acesse nossas mídias sociais.
+          Olá, Eu Sou DexZ Bot. Desenvolvido por Felipe Fidelo, e estamos 4 anos nesse mundo!
         </div>
         <a class="popup-close" onclick="history.back()">&times;</a>
       </div>
     </div>
 
     <div id="userName">
-      Adorei News | "Clique na foto!"
+      DexZ Bot MD
     </div>
 
-   <div id="links">
-  <a class="link" href="https://instagram.com/adorei.news" target="_blank">
-    <i class="fab fa-instagram">&nbsp;</i>Adorei News
-  </a>
-
-
- 
+    <div id="links">
+      <a class="link" href="https://instagram.com/fidelo34k" target="_blank">
+        <i class="fab fa-instagram">&nbsp;</i>Meu criador
+      </a>
   
-  <a class="link" href="https://whatsapp.com/channel/0029VaM6RV32ER6mkGt7vE0Y" target="_blank">
-    <i class="fab fa-whatsapp">&nbsp;</i>Canal De Fofocas No zap!
-  </a>
-</div>
-
+      <a class="link" href="https://chat.whatsapp.com/ITzzMMfgsxdL73WJKmpq0G" target="_blank">
+        <i class="fab fa-whatsapp">&nbsp;</i>Grupo Oficial
+      </a>
+      
+     
+      <button id="btnDonate" onclick="copyPixKey()" class="link">
+        <i class="fab fa-pix">&nbsp;</i>Donate
+      </button>
+    </div>
 
     <div id="hashtag">
-     Beijo na bunda de quem leu!
+      Beijo na bunda de quem leu!
     </div>
 
-   
+
+    <script>
+      function copyPixKey() {
+        var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
+        navigator.clipboard.writeText(pixKey)
+          .then(() => {
+            alert("Chave Pix copiada para a área de transferência!");
+          })
+          .catch(err => {
+            console.error('Erro ao copiar a chave Pix: ', err);
+          });
+      }
+    </script>
   </body>
 </html>
