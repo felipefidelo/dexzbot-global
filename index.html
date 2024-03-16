@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DexZ Bot</title>
@@ -10,70 +10,73 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Core theme CSS -->
     <link rel="stylesheet" href="style.css">
-  </head>
-
-  <body>
+    <!-- Script do ElfSight -->
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+</head>
+<body>
     <!-- Parallax Pixel Background Animation -->
     <section class="animated-background">
-      <div id="stars1"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
+        <div id="stars1"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
     </section>
     <!-- End of Parallax Pixel Background Animation -->
 
     <a id="profilePicture" href="#popup">
-      <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
+        <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
     </a>
 
     <div class="overlay" id="popup">
-      <div class="popup">
-        <div class="popup-photo">
-          <a href="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" target="_blank">
-            <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
-          </a>
+        <div class="popup">
+            <div class="popup-photo">
+                <a href="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" target="_blank">
+                    <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
+                </a>
+            </div>
+            <div class="popup-quote">
+                Olá, Eu Sou DexZ Bot. Desenvolvido por Felipe Fidelo, e estamos 4 anos nesse mundo!
+            </div>
+            <a class="popup-close" onclick="history.back()">&times;</a>
         </div>
-        <div class="popup-quote">
-          Olá, Eu Sou DexZ Bot. Desenvolvido por Felipe Fidelo, e estamos 4 anos nesse mundo!
-        </div>
-        <a class="popup-close" onclick="history.back()">&times;</a>
-      </div>
     </div>
 
     <div id="userName">
-      DexZ Bot MD
+        DexZ Bot MD
     </div>
 
     <div id="links">
-      <a class="link" href="https://instagram.com/fidelo34k" target="_blank">
-        <i class="fab fa-instagram">&nbsp;</i>Meu criador
-      </a>
-  
-      <a class="link" href="https://chat.whatsapp.com/ITzzMMfgsxdL73WJKmpq0G" target="_blank">
-        <i class="fab fa-whatsapp">&nbsp;</i>Grupo Oficial
-      </a>
-      
-     
-      <button id="btnDonate" onclick="copyPixKey()" class="link">
-        <i class="fab fa-pix">&nbsp;</i>Donate
-      </button>
+        <a class="link" href="https://instagram.com/fidelo34k" target="_blank">
+            <i class="fab fa-instagram">&nbsp;</i>Meu criador
+        </a>
+
+        <a class="link" href="https://chat.whatsapp.com/ITzzMMfgsxdL73WJKmpq0G" target="_blank">
+            <i class="fab fa-whatsapp">&nbsp;</i>Grupo Oficial
+        </a>
+
+        <button id="btnDonate" onclick="copyPixKey()" class="link">
+            <i class="fab fa-pix">&nbsp;</i>Donate
+        </button>
     </div>
 
     <div id="hashtag">
-      Beijo na bunda de quem leu!
+        Beijo na bunda de quem leu!
     </div>
 
+    <!-- Div do ElfSight -->
+    <div class="elfsight-app-d1c30790-fae6-45e4-9653-56dd104502ad" data-elfsight-app-lazy></div>
 
+    <!-- Função para copiar a chave Pix -->
     <script>
-      function copyPixKey() {
-        var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
-        navigator.clipboard.writeText(pixKey)
-          .then(() => {
-            alert("Chave Pix copiada para a área de transferência!");
-          })
-          .catch(err => {
-            console.error('Erro ao copiar a chave Pix: ', err);
-          });
-      }
+        function copyPixKey() {
+            var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
+            navigator.clipboard.writeText(pixKey)
+                .then(() => {
+                    alert("Chave Pix copiada para a área de transferência!");
+                })
+                .catch(err => {
+                    console.error('Erro ao copiar a chave Pix: ', err);
+                });
+        }
     </script>
-  </body>
+</body>
 </html>
