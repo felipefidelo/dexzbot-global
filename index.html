@@ -39,6 +39,8 @@
             z-index: 9998; /* Abaixo da caixa de mensagem, mas acima do conteúdo do site */
             display: none; /* Por padrão, o overlay estará oculto */
         }
+
+        /* Estilos adicionais podem ser colocados aqui */
     </style>
 </head>
 <body>
@@ -80,15 +82,47 @@
 
     <!-- Restante do conteúdo do seu site -->
     <div id="profilePictureContainer">
-        <!-- Conteúdo do perfil e pop-up -->
+        <a id="profilePicture" href="#popup">
+            <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
+        </a>
+
+        <div class="overlay" id="popup">
+            <div class="popup">
+                <div class="popup-photo">
+                    <a href="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" target="_blank">
+                        <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
+                    </a>
+                </div>
+                <div class="popup-quote">
+                    Olá, Eu Sou DexZ Bot. Desenvolvido por Felipe Fidelo, e estamos 4 anos nesse mundo!
+                </div>
+                <a class="popup-close" onclick="history.back()">&times;</a>
+            </div>
+        </div>
     </div>
 
-    <!-- Links e botões -->
+    <div id="userName">
+        DexZ Bot MD
+    </div>
+
     <div id="links" class="button-container">
-        <!-- Links e botões do seu site -->
+        <a class="link" href="https://instagram.com/fidelo34k" target="_blank">
+            <i class="fab fa-instagram">&nbsp;</i>Meu criador
+        </a>
+
+        <a class="link" href="https://chat.whatsapp.com/ITzzMMfgsxdL73WJKmpq0G" target="_blank">
+            <i class="fab fa-whatsapp">&nbsp;</i>Grupo Oficial
+        </a>
+
+        <a class="link" href="#" onclick="copyPixKey()">
+            <i class="fab fa-pix">&nbsp;</i>Donate
+        </a>
+
+        <a class="link" href="https://starkeverything.com" target="_blank">
+            <i class="fas fa-space-shuttle"></i>Loja DexZ Bot
+        </a>
     </div>
 
-    <!-- Hashtag -->
     <div id="hashtag">
         Beijo na bunda de quem leu!
     </div>
