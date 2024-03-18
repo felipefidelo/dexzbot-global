@@ -13,47 +13,51 @@
     <!-- Script do ElfSight -->
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
     <style>
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .button-container .link {
-            margin: 0 10px;
-            display: inline-block;
-            text-decoration: none;
-            color: white; /* Mudança para branco */
-            padding: 10px 20px;
-            border: 2px solid white; /* Corrigido para branco */
-            border-radius: 5px;
+        /* Estilo para a caixa de mensagem */
+        .welcome-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            z-index: 9999; /* Para garantir que a mensagem esteja acima de todos os outros elementos */
+            display: none; /* Por padrão, a mensagem estará oculta */
         }
     </style>
 </head>
 <body>
-    <script>
-        function confirmAndProceed() {
-            var proceed = confirm("Deseja prosseguir para 'DexZ Bot?'");
-            if (proceed) {
-                // Se o usuário clicar em 'OK', redireciona para o site e inicia a música
-                window.location.href = "https://felipefidelo.github.io/dexzbotmd/";
-            }
-        }
-    </script>
+    <!-- Caixa de mensagem de boas-vindas -->
+    <div class="welcome-message" id="welcomeMessage">
+        <h2>Bem-vindo ao site DexZ Bot</h2>
+        <button onclick="closeWelcomeMessage()">Fechar</button>
+    </div>
 
-    <button onclick="confirmAndProceed()">Prosseguir para DexZ Bot</button>
+    <!-- Áudio de fundo -->
+    <audio id="backgroundAudio" loop>
+        <source src="musga.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
 
-    <!-- Função para copiar a chave Pix -->
+    <!-- Script para exibir a mensagem de boas-vindas e iniciar a música -->
     <script>
-        function copyPixKey() {
-            var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
-            navigator.clipboard.writeText(pixKey)
-                .then(() => {
-                    alert("Chave Pix copiada para a área de transferência!");
-                })
-                .catch(err => {
-                    console.error('Erro ao copiar a chave Pix: ', err);
-                });
+        // Função para exibir a mensagem de boas-vindas
+        function showWelcomeMessage() {
+            document.getElementById("welcomeMessage").style.display = "block";
         }
+
+        // Função para fechar a mensagem de boas-vindas e iniciar a música
+        function closeWelcomeMessage() {
+            document.getElementById("welcomeMessage").style.display = "none";
+            document.getElementById("backgroundAudio").play();
+        }
+
+        // Exibir a mensagem de boas-vindas quando o site for carregado
+        window.onload = function() {
+            showWelcomeMessage();
+        };
     </script>
 </body>
 </html>
