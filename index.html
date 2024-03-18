@@ -14,10 +14,11 @@
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
     <style>
         /* Estilo para a caixa de mensagem */
-html, body {
-    margin: 0;
-    padding: 0;
-}
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
         .welcome-message {
             position: fixed;
             top: 0;
@@ -40,7 +41,7 @@ html, body {
 
         .welcome-message h2 {
             margin-bottom: 20px;
-            color: #FFFFFF
+            color: #FFFFFF;
         }
 
         .welcome-message button {
@@ -71,6 +72,48 @@ html, body {
             text-align: center;
             margin-top: 20px;
         }
+
+        /* Estilos para a animação de fundo */
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Colocar atrás de outros elementos */
+            overflow: hidden;
+        }
+
+        #stars1, #stars2, #stars3 {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: white;
+        }
+
+        #stars1 {
+            top: 10%;
+            left: 20%;
+            animation: animStar 0.6s infinite;
+        }
+
+        #stars2 {
+            top: 20%;
+            left: 40%;
+            animation: animStar 0.75s infinite;
+        }
+
+        #stars3 {
+            top: 30%;
+            left: 60%;
+            animation: animStar 0.9s infinite;
+        }
+
+        @keyframes animStar {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
@@ -78,17 +121,23 @@ html, body {
     <div class="welcome-message" id="welcomeMessage">
         <div class="welcome-message-content">
             <h2>Bem-vindo ao site DexZ Bot</h2>
-<p style="color: white;">Aqui Você terá informações de nosso querido DexZ e de seu criador, Felipe Fidelo.</p>
+            <p style="color: white;">Aqui Você terá informações de nosso querido DexZ e de seu criador, Felipe Fidelo.</p>
             <button onclick="closeWelcomeMessage()">Fechar</button>
         </div>
     </div>
-
 
     <!-- Áudio de fundo -->
     <audio id="backgroundAudio" loop>
         <source src="musga.mp3" type="audio/mpeg">
         Seu navegador não suporta o elemento de áudio.
     </audio>
+
+    <!-- Animação de fundo com estrelas -->
+    <section class="animated-background">
+        <div id="stars1"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </section>
 
     <!-- Restante do conteúdo do seu site -->
     <div id="profilePictureContainer">
