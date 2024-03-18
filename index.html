@@ -16,97 +16,58 @@
         /* Estilo para a caixa de mensagem */
         .welcome-message {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            border: 2px solid black;
-            border-radius: 10px;
-            z-index: 9999; /* Para garantir que a mensagem esteja acima de todos os outros elementos */
-            display: none; /* Por padrão, a mensagem estará oculta */
-        }
-
-        /* Estilo para o fundo desfocado */
-        .overlay {
-            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
-            backdrop-filter: blur(5px); /* Efeito de desfoque */
-            z-index: 9998; /* Abaixo da caixa de mensagem, mas acima do conteúdo do site */
-            display: none; /* Por padrão, o overlay estará oculto */
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente branco */
+            z-index: 9999; /* Para garantir que a mensagem esteja acima de todos os outros elementos */
+            display: none; /* Por padrão, a mensagem estará oculta */
         }
 
-        /* Estilos adicionais podem ser colocados aqui */
+        /* Estilos adicionais para a caixa de mensagem */
+        .welcome-message-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .welcome-message h2 {
+            margin-bottom: 20px;
+        }
+
+        .welcome-message button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <!-- Caixa de mensagem de boas-vindas -->
     <div class="welcome-message" id="welcomeMessage">
-        <h2>Bem-vindo ao site DexZ Bot</h2>
-        <button onclick="closeWelcomeMessage()">Fechar</button>
-    </div>
-
-    <!-- Overlay para o fundo desfocado -->
-    <div class="overlay" id="overlay"></div>
-
-    <!-- Áudio de fundo -->
-    <audio id="backgroundAudio" loop>
-        <source src="musga.mp3" type="audio/mpeg">
-        Seu navegador não suporta o elemento de áudio.
-    </audio>
-
-    <!-- Script para exibir a mensagem de boas-vindas e iniciar a música -->
-    <script>
-        // Função para exibir a mensagem de boas-vindas e o overlay
-        function showWelcomeMessage() {
-            document.getElementById("welcomeMessage").style.display = "block";
-            document.getElementById("overlay").style.display = "block";
-        }
-
-        // Função para fechar a mensagem de boas-vindas e iniciar a música
-        function closeWelcomeMessage() {
-            document.getElementById("welcomeMessage").style.display = "none";
-            document.getElementById("overlay").style.display = "none";
-            document.getElementById("backgroundAudio").play();
-        }
-
-        // Exibir a mensagem de boas-vindas quando o site for carregado
-        window.onload = function() {
-            showWelcomeMessage();
-        };
-    </script>
-
-    <!-- Restante do conteúdo do seu site -->
-    <div id="profilePictureContainer">
-        <a id="profilePicture" href="#popup">
-            <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
-        </a>
-
-        <div class="overlay" id="popup">
-            <div class="popup">
-                <div class="popup-photo">
-                    <a href="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" target="_blank">
-                        <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
-                    </a>
-                </div>
-                <div class="popup-quote">
-                    Olá, Eu Sou DexZ Bot. Desenvolvido por Felipe Fidelo, e estamos 4 anos nesse mundo!
-                </div>
-                <a class="popup-close" onclick="history.back()">&times;</a>
-            </div>
+        <div class="welcome-message-content">
+            <h2>Bem-vindo ao site DexZ Bot</h2>
+            <button onclick="closeWelcomeMessage()">Fechar</button>
         </div>
     </div>
 
-    <div id="userName">
-        DexZ Bot MD
+    <!-- Restante do conteúdo do seu site -->
+    <div id="profilePictureContainer">
+        <!-- Conteúdo do perfil e pop-up -->
     </div>
 
+    <!-- Links e botões -->
     <div id="links" class="button-container">
-        <a class="link" href="https://instagram.com/fidelo34k" target="_blank">
+        <!-- Links e botões do seu site -->
+    </div>
+
+<a class="link" href="https://instagram.com/fidelo34k" target="_blank">
             <i class="fab fa-instagram">&nbsp;</i>Meu criador
         </a>
 
@@ -123,12 +84,29 @@
         </a>
     </div>
 
+    <!-- Hashtag -->
     <div id="hashtag">
         Beijo na bunda de quem leu!
     </div>
 
     <!-- Função para copiar a chave Pix -->
     <script>
+        // Função para exibir a mensagem de boas-vindas
+        function showWelcomeMessage() {
+            document.getElementById("welcomeMessage").style.display = "block";
+        }
+
+        // Função para fechar a mensagem de boas-vindas
+        function closeWelcomeMessage() {
+            document.getElementById("welcomeMessage").style.display = "none";
+            document.getElementById("backgroundAudio").play();
+        }
+
+        // Exibir a mensagem de boas-vindas quando o site for carregado
+        window.onload = function() {
+            showWelcomeMessage();
+        };
+        
         // Função para copiar a chave Pix
         function copyPixKey() {
             var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
