@@ -9,6 +9,9 @@
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Core theme CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Script do ElfSight -->
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
     <style>
         /* Estilo para a caixa de mensagem */
         .welcome-message {
@@ -17,20 +20,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente preto */
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente branco */
             z-index: 9999; /* Para garantir que a mensagem esteja acima de todos os outros elementos */
             display: none; /* Por padrão, a mensagem estará oculta */
-            animation: fadeIn 1s ease; /* Animação de fade-in */
-        }
-
-        /* Animação de fade-in */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
 
         /* Estilos adicionais para a caixa de mensagem */
@@ -40,15 +32,16 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: white; /* Cor branca para o texto */
         }
 
         .welcome-message h2 {
             margin-bottom: 10px;
+            color: #333; /* Cor preta para o título */
         }
 
         .welcome-message p {
             margin-bottom: 20px;
+            color: #333; /* Cor preta para o texto */
         }
 
         .welcome-message button {
@@ -78,7 +71,6 @@
         #hashtag {
             text-align: center;
             margin-top: 20px;
-            color: white; /* Cor branca para a hashtag */
         }
     </style>
 </head>
@@ -100,6 +92,7 @@
 
     <!-- Restante do conteúdo do seu site -->
     <div id="profilePictureContainer">
+        <!-- Conteúdo do perfil e pop-up -->
         <a id="profilePicture" href="#popup">
             <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
         </a>
@@ -147,21 +140,17 @@
 
     <!-- Função para copiar a chave Pix -->
     <script>
-        // Função para exibir a mensagem de boas-vindas
-        function showWelcomeMessage() {
-            document.getElementById("welcomeMessage").style.display = "block";
-        }
-
-        // Função para fechar a mensagem de boas-vindas e iniciar a música
-        function closeWelcomeMessage() {
-            document.getElementById("welcomeMessage").style.display = "none";
-            document.getElementById("backgroundAudio").play();
-        }
-
-        // Exibir a mensagem de boas-vindas quando o site for carregado
+        // Função para exibir a mensagem
+// Exibir a mensagem de boas-vindas quando o site for carregado
 window.onload = function() {
     showWelcomeMessage();
 };
+
+// Função para fechar a mensagem de boas-vindas e iniciar a música
+function closeWelcomeMessage() {
+    document.getElementById("welcomeMessage").style.display = "none";
+    document.getElementById("backgroundAudio").play();
+}
 
 // Função para copiar a chave Pix
 function copyPixKey() {
