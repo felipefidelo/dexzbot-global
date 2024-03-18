@@ -73,47 +73,14 @@
             margin-top: 20px;
         }
 
-        /* Estilos para a animação de fundo */
-        .animated-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Colocar atrás de outros elementos */
-            overflow: hidden;
-        }
+    <!-- Parallax Pixel Background Animation -->
+    <section class="animated-background">
+        <div id="stars1"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </section>
+    <!-- End of Parallax Pixel Background Animation -->
 
-        #stars1, #stars2, #stars3 {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            background: white;
-        }
-
-        #stars1 {
-            top: 10%;
-            left: 20%;
-            animation: animStar 0.6s infinite;
-        }
-
-        #stars2 {
-            top: 20%;
-            left: 40%;
-            animation: animStar 0.75s infinite;
-        }
-
-        #stars3 {
-            top: 30%;
-            left: 60%;
-            animation: animStar 0.9s infinite;
-        }
-
-        @keyframes animStar {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
-        }
     </style>
 </head>
 <body>
