@@ -27,7 +27,18 @@
             display: none; /* Por padrão, a mensagem estará oculta */
         }
 
-        /* Estilos adicionais podem ser colocados aqui */
+        /* Estilo para o fundo desfocado */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+            backdrop-filter: blur(5px); /* Efeito de desfoque */
+            z-index: 9998; /* Abaixo da caixa de mensagem, mas acima do conteúdo do site */
+            display: none; /* Por padrão, o overlay estará oculto */
+        }
     </style>
 </head>
 <body>
@@ -37,6 +48,9 @@
         <button onclick="closeWelcomeMessage()">Fechar</button>
     </div>
 
+    <!-- Overlay para o fundo desfocado -->
+    <div class="overlay" id="overlay"></div>
+
     <!-- Áudio de fundo -->
     <audio id="backgroundAudio" loop>
         <source src="musga.mp3" type="audio/mpeg">
@@ -45,14 +59,16 @@
 
     <!-- Script para exibir a mensagem de boas-vindas e iniciar a música -->
     <script>
-        // Função para exibir a mensagem de boas-vindas
+        // Função para exibir a mensagem de boas-vindas e o overlay
         function showWelcomeMessage() {
             document.getElementById("welcomeMessage").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
         }
 
         // Função para fechar a mensagem de boas-vindas e iniciar a música
         function closeWelcomeMessage() {
             document.getElementById("welcomeMessage").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
             document.getElementById("backgroundAudio").play();
         }
 
@@ -64,53 +80,22 @@
 
     <!-- Restante do conteúdo do seu site -->
     <div id="profilePictureContainer">
-        <a id="profilePicture" href="#popup">
-            <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
-        </a>
-
-        <div class="overlay" id="popup">
-            <div class="popup">
-                <div class="popup-photo">
-                    <a href="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" target="_blank">
-                        <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
-                    </a>
-                </div>
-                <div class="popup-quote">
-                    Olá, Eu Sou DexZ Bot. Desenvolvido por Felipe Fidelo, e estamos 4 anos nesse mundo!
-                </div>
-                <a class="popup-close" onclick="history.back()">&times;</a>
-            </div>
-        </div>
+        <!-- Conteúdo do perfil e pop-up -->
     </div>
 
-    <div id="userName">
-        DexZ Bot MD
-    </div>
-
+    <!-- Links e botões -->
     <div id="links" class="button-container">
-        <a class="link" href="https://instagram.com/fidelo34k" target="_blank">
-            <i class="fab fa-instagram">&nbsp;</i>Meu criador
-        </a>
-
-        <a class="link" href="https://chat.whatsapp.com/ITzzMMfgsxdL73WJKmpq0G" target="_blank">
-            <i class="fab fa-whatsapp">&nbsp;</i>Grupo Oficial
-        </a>
-
-        <a class="link" href="#" onclick="copyPixKey()">
-            <i class="fab fa-pix">&nbsp;</i>Donate
-        </a>
-
-        <a class="link" href="https://starkeverything.com" target="_blank">
-            <i class="fas fa-space-shuttle"></i>Loja DexZ Bot
-        </a>
+        <!-- Links e botões do seu site -->
     </div>
 
+    <!-- Hashtag -->
     <div id="hashtag">
         Beijo na bunda de quem leu!
     </div>
 
     <!-- Função para copiar a chave Pix -->
     <script>
+        // Função para copiar a chave Pix
         function copyPixKey() {
             var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
             navigator.clipboard.writeText(pixKey)
@@ -122,4 +107,5 @@
                 });
         }
     </script>
-</body
+</body>
+</html>
