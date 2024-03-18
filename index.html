@@ -35,13 +35,7 @@
         }
 
         .welcome-message h2 {
-            margin-bottom: 10px;
-            color: #333; /* Cor preta para o título */
-        }
-
-        .welcome-message p {
             margin-bottom: 20px;
-            color: #333; /* Cor preta para o texto */
         }
 
         .welcome-message button {
@@ -79,7 +73,6 @@
     <div class="welcome-message" id="welcomeMessage">
         <div class="welcome-message-content">
             <h2>Bem-vindo ao site DexZ Bot</h2>
-            <p>Aqui você encontrará informações sobre o DexZ Bot e seu desenvolvedor, Felipe Fidelo.</p>
             <button onclick="closeWelcomeMessage()">Fechar</button>
         </div>
     </div>
@@ -92,7 +85,6 @@
 
     <!-- Restante do conteúdo do seu site -->
     <div id="profilePictureContainer">
-        <!-- Conteúdo do perfil e pop-up -->
         <a id="profilePicture" href="#popup">
             <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
         </a>
@@ -140,29 +132,33 @@
 
     <!-- Função para copiar a chave Pix -->
     <script>
-        // Função para exibir a mensagem
-// Exibir a mensagem de boas-vindas quando o site for carregado
-window.onload = function() {
-    showWelcomeMessage();
-};
+        // Função para exibir a mensagem de boas-vindas
+        function showWelcomeMessage() {
+            document.getElementById("welcomeMessage").style.display = "block";
+        }
 
-// Função para fechar a mensagem de boas-vindas e iniciar a música
-function closeWelcomeMessage() {
-    document.getElementById("welcomeMessage").style.display = "none";
-    document.getElementById("backgroundAudio").play();
-}
+        // Função para fechar a mensagem de boas-vindas e iniciar a música
+        function closeWelcomeMessage() {
+            document.getElementById("welcomeMessage").style.display = "none";
+            document.getElementById("backgroundAudio").play();
+        }
 
-// Função para copiar a chave Pix
-function copyPixKey() {
-    var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
-    navigator.clipboard.writeText(pixKey)
-        .then(() => {
-            alert("Chave Pix copiada para a área de transferência!");
-        })
-        .catch(err => {
-            console.error('Erro ao copiar a chave Pix: ', err);
-        });
-}
-</script>
+        // Exibir a mensagem de boas-vindas quando o site for carregado
+        window.onload = function() {
+            showWelcomeMessage();
+        };
+        
+        // Função para copiar a chave Pix
+        function copyPixKey() {
+            var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
+            navigator.clipboard.writeText(pixKey)
+                .then(() => {
+                    alert("Chave Pix copiada para a área de transferência!");
+                })
+                .catch(err => {
+                    console.error('Erro ao copiar a chave Pix: ', err);
+                });
+        }
+    </script>
 </body>
 </html>
