@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +26,8 @@
             z-index: 9999; /* Para garantir que a mensagem esteja acima de todos os outros elementos */
             display: none; /* Por padrão, a mensagem estará oculta */
         }
+
+        /* Estilos adicionais podem ser colocados aqui */
     </style>
 </head>
 <body>
@@ -59,5 +61,65 @@
             showWelcomeMessage();
         };
     </script>
-</body>
-</html>
+
+    <!-- Restante do conteúdo do seu site -->
+    <div id="profilePictureContainer">
+        <a id="profilePicture" href="#popup">
+            <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
+        </a>
+
+        <div class="overlay" id="popup">
+            <div class="popup">
+                <div class="popup-photo">
+                    <a href="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" target="_blank">
+                        <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
+                    </a>
+                </div>
+                <div class="popup-quote">
+                    Olá, Eu Sou DexZ Bot. Desenvolvido por Felipe Fidelo, e estamos 4 anos nesse mundo!
+                </div>
+                <a class="popup-close" onclick="history.back()">&times;</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="userName">
+        DexZ Bot MD
+    </div>
+
+    <div id="links" class="button-container">
+        <a class="link" href="https://instagram.com/fidelo34k" target="_blank">
+            <i class="fab fa-instagram">&nbsp;</i>Meu criador
+        </a>
+
+        <a class="link" href="https://chat.whatsapp.com/ITzzMMfgsxdL73WJKmpq0G" target="_blank">
+            <i class="fab fa-whatsapp">&nbsp;</i>Grupo Oficial
+        </a>
+
+        <a class="link" href="#" onclick="copyPixKey()">
+            <i class="fab fa-pix">&nbsp;</i>Donate
+        </a>
+
+        <a class="link" href="https://starkeverything.com" target="_blank">
+            <i class="fas fa-space-shuttle"></i>Loja DexZ Bot
+        </a>
+    </div>
+
+    <div id="hashtag">
+        Beijo na bunda de quem leu!
+    </div>
+
+    <!-- Função para copiar a chave Pix -->
+    <script>
+        function copyPixKey() {
+            var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
+            navigator.clipboard.writeText(pixKey)
+                .then(() => {
+                    alert("Chave Pix copiada para a área de transferência!");
+                })
+                .catch(err => {
+                    console.error('Erro ao copiar a chave Pix: ', err);
+                });
+        }
+    </script>
+</body
