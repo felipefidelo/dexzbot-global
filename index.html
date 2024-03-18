@@ -158,23 +158,22 @@
             document.getElementById("backgroundAudio").play();
         }
 
-        // Exibir a mensagem de
         // Exibir a mensagem de boas-vindas quando o site for carregado
-        window.onload = function() {
-            showWelcomeMessage();
-        };
-        
-        // Função para copiar a chave Pix
-        function copyPixKey() {
-            var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
-            navigator.clipboard.writeText(pixKey)
-                .then(() => {
-                    alert("Chave Pix copiada para a área de transferência!");
-                })
-                .catch(err => {
-                    console.error('Erro ao copiar a chave Pix: ', err);
-                });
-        }
-    </script>
+window.onload = function() {
+    showWelcomeMessage();
+};
+
+// Função para copiar a chave Pix
+function copyPixKey() {
+    var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
+    navigator.clipboard.writeText(pixKey)
+        .then(() => {
+            alert("Chave Pix copiada para a área de transferência!");
+        })
+        .catch(err => {
+            console.error('Erro ao copiar a chave Pix: ', err);
+        });
+}
+</script>
 </body>
 </html>
