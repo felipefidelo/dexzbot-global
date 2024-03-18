@@ -14,10 +14,11 @@
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
     <style>
         /* Estilo para a caixa de mensagem */
-html, body {
-    margin: 0;
-    padding: 0;
-}
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
         .welcome-message {
             position: fixed;
             top: 0;
@@ -25,8 +26,10 @@ html, body {
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente preto */
+            color: white;
+            text-align: center;
+            padding: 20px;
             z-index: 9999; /* Para garantir que a mensagem esteja acima de todos os outros elementos */
-            display: none; /* Por padrão, a mensagem estará oculta */
         }
 
         /* Estilos adicionais para a caixa de mensagem */
@@ -40,7 +43,7 @@ html, body {
 
         .welcome-message h2 {
             margin-bottom: 20px;
-            color: #FFFFFF
+            color: #FFFFFF;
         }
 
         .welcome-message button {
@@ -78,11 +81,10 @@ html, body {
     <div class="welcome-message" id="welcomeMessage">
         <div class="welcome-message-content">
             <h2>Bem-vindo ao site DexZ Bot</h2>
-<p style="color: white;">Aqui Você terá informações de nosso querido DexZ e de seu criador, Felipe Fidelo.</p>
+            <p style="color: white;">Aqui Você terá informações de nosso querido DexZ e de seu criador, Felipe Fidelo.</p>
             <button onclick="closeWelcomeMessage()">Fechar</button>
         </div>
     </div>
-
 
     <!-- Áudio de fundo -->
     <audio id="backgroundAudio" loop>
@@ -154,7 +156,7 @@ html, body {
         window.onload = function() {
             showWelcomeMessage();
         };
-        
+
         // Função para copiar a chave Pix
         function copyPixKey() {
             var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
