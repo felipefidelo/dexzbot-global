@@ -46,6 +46,26 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container .link {
+            margin: 0 10px;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+        }
+
+        #hashtag {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -57,17 +77,39 @@
         </div>
     </div>
 
+    <!-- Áudio de fundo -->
+    <audio id="backgroundAudio" loop>
+        <source src="musga.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
     <!-- Restante do conteúdo do seu site -->
     <div id="profilePictureContainer">
-        <!-- Conteúdo do perfil e pop-up -->
+        <a id="profilePicture" href="#popup">
+            <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
+        </a>
+
+        <div class="overlay" id="popup">
+            <div class="popup">
+                <div class="popup-photo">
+                    <a href="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" target="_blank">
+                        <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
+                    </a>
+                </div>
+                <div class="popup-quote">
+                    Olá, Eu Sou DexZ Bot. Desenvolvido por Felipe Fidelo, e estamos 4 anos nesse mundo!
+                </div>
+                <a class="popup-close" onclick="history.back()">&times;</a>
+            </div>
+        </div>
     </div>
 
-    <!-- Links e botões -->
+    <div id="userName">
+        DexZ Bot MD
+    </div>
+
     <div id="links" class="button-container">
-        <!-- Links e botões do seu site -->
-    </div>
-
-<a class="link" href="https://instagram.com/fidelo34k" target="_blank">
+        <a class="link" href="https://instagram.com/fidelo34k" target="_blank">
             <i class="fab fa-instagram">&nbsp;</i>Meu criador
         </a>
 
@@ -84,7 +126,6 @@
         </a>
     </div>
 
-    <!-- Hashtag -->
     <div id="hashtag">
         Beijo na bunda de quem leu!
     </div>
@@ -96,7 +137,7 @@
             document.getElementById("welcomeMessage").style.display = "block";
         }
 
-        // Função para fechar a mensagem de boas-vindas
+        // Função para fechar a mensagem de boas-vindas e iniciar a música
         function closeWelcomeMessage() {
             document.getElementById("welcomeMessage").style.display = "none";
             document.getElementById("backgroundAudio").play();
