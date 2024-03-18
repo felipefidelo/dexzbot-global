@@ -30,63 +30,17 @@
     </style>
 </head>
 <body>
-    <!-- Parallax Pixel Background Animation -->
-    <section class="animated-background">
-        <div id="stars1"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-    </section>
-    <!-- End of Parallax Pixel Background Animation -->
+    <script>
+        function confirmAndProceed() {
+            var proceed = confirm("Deseja prosseguir para 'DexZ Bot?'");
+            if (proceed) {
+                // Se o usuário clicar em 'OK', redireciona para o site e inicia a música
+                window.location.href = "https://seusite.com";
+            }
+        }
+    </script>
 
-    <a id="profilePicture" href="#popup" onclick="playAudio()">
-        <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
-    </a>
-
-    <div class="overlay" id="popup">
-        <div class="popup">
-            <div class="popup-photo">
-                <a href="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" target="_blank">
-                    <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
-                </a>
-            </div>
-            <div class="popup-quote">
-                Olá, Eu Sou DexZ Bot. Desenvolvido por Felipe Fidelo, e estamos 4 anos nesse mundo!
-            </div>
-            <a class="popup-close" onclick="history.back()">&times;</a>
-        </div>
-    </div>
-
-    <audio id="backgroundAudio" loop>
-      <source src="musga.mp3" type="audio/mpeg">
-      Seu navegador não suporta o elemento de áudio.
-    </audio>
-
-    <div id="userName">
-        DexZ Bot MD
-    </div>
-
-    <div id="links" class="button-container">
-        <a class="link" href="https://instagram.com/fidelo34k" target="_blank">
-            <i class="fab fa-instagram">&nbsp;</i>Meu criador
-        </a>
-
-        <a class="link" href="https://chat.whatsapp.com/ITzzMMfgsxdL73WJKmpq0G" target="_blank">
-            <i class="fab fa-whatsapp">&nbsp;</i>Grupo Oficial
-        </a>
-
-        <a class="link" href="#" onclick="copyPixKey()">
-            <i class="fab fa-pix">&nbsp;</i>Donate
-        </a>
-
-        <a class="link" href="https://starkeverything.com" target="_blank">
-            <i class="fas fa-space-shuttle"></i>Loja DexZ Bot
-        </a>
-    </div>
-
-    <div id="hashtag">
-        Beijo na bunda de quem leu!
-    </div>
-
+    <button onclick="confirmAndProceed()">Prosseguir para DexZ Bot</button>
 
     <!-- Função para copiar a chave Pix -->
     <script>
@@ -99,11 +53,6 @@
                 .catch(err => {
                     console.error('Erro ao copiar a chave Pix: ', err);
                 });
-        }
-
-        function playAudio() {
-            var audio = document.getElementById("backgroundAudio");
-            audio.play();
         }
     </script>
 </body>
