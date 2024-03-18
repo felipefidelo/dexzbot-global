@@ -38,7 +38,7 @@
     </section>
     <!-- End of Parallax Pixel Background Animation -->
 
-    <a id="profilePicture" href="#popup">
+    <a id="profilePicture" href="#popup" onclick="playAudio()">
         <img src="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" alt="Profile Picture">
     </a>
 
@@ -56,10 +56,10 @@
         </div>
     </div>
 
-<audio autoplay loop>
-  <source src="./musga.mp3" type="audio/mpeg">
-  Seu navegador não suporta o elemento de áudio.
-</audio>
+    <audio id="backgroundAudio" loop>
+      <source src="musga.mp3" type="audio/mpeg">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
 
     <div id="userName">
         DexZ Bot MD
@@ -87,7 +87,7 @@
         Beijo na bunda de quem leu!
     </div>
 
-   
+
     <!-- Função para copiar a chave Pix -->
     <script>
         function copyPixKey() {
@@ -99,6 +99,11 @@
                 .catch(err => {
                     console.error('Erro ao copiar a chave Pix: ', err);
                 });
+        }
+
+        function playAudio() {
+            var audio = document.getElementById("backgroundAudio");
+            audio.play();
         }
     </script>
 </body>
