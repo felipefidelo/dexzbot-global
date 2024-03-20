@@ -59,35 +59,27 @@
         }
 
         .button-container .link {
-            display: block;
-            text-decoration: none;
-            color: white;
-            padding: 10px 20px;
-            border: 2px solid white;
-            border-radius: 5px;
-        }
+    /* margin: 0 10px; */
+    display: block; /* Alteração aqui */
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
 
         #hashtag {
             text-align: center;
             margin-top: 20px;
         }
 
-        /* Animação neon girando */
-        @keyframes neon-spin {
-          0% { 
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
-          }
-          50% {
-            text-shadow: none;
-          }
-          100% {
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0ff, 0 0 35px #0ff, 0 0 40px #0ff, 0 0 50px #0ff, 0 0 75px #0ff;
-          }
-        }
-
-        #profilePictureContainer {
-          animation: neon-spin 2s linear infinite;
-        }
+    <!-- Parallax Pixel Background Animation -->
+    <section class="animated-background">
+        <div id="stars1"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </section>
+    <!-- End of Parallax Pixel Background Animation -->
 
     </style>
 </head>
@@ -119,6 +111,22 @@
         <a id="profilePicture" href="#popup">
             <img src="https://telegra.ph/file/739dc388fc45e87b50b80.jpg" alt="Profile Picture">
         </a>
+
+        <div class="overlay" id="popup">
+            <div class="popup">
+                <div class="popup-photo">
+                    <a href="https://telegra.ph/file/739dc388fc45e87b50b80.jpg" target="_blank">
+                        <img src="https://telegra.ph/file/739dc388fc45e87b50b80.jpg" alt="Profile Picture">
+                    </a>
+                </div>
+                <div class="popup-quote">
+                    Olá, meu nome é Felipe Fidelo, e sou desenvolvedor de DexZ Bot. Para quem tá chegando agora, saiba que esse projeto existe desde 2020, sempre inovando e buscando atingir o melhor. DexZ está hospedado em um servidor pago,para mantê-lo online 24 horas por dia. Caso queira dar uma ajudinha e colaborar para a existência e funcionamento do bot, você pode fazer um donate😉.
+
+Por: Felipe Fidelo📌
+                </div>
+                <a class="popup-close" onclick="history.back()">&times;</a>
+            </div>
+        </div>
     </div>
 
     <div id="userName">
@@ -135,8 +143,8 @@
         </a>
 
         <a class="link" href="#" onclick="copyPixKey()">
-            <i class="fas fa-donate"></i>Donate
-        </a>
+    <i class="fas fa-donate"></i>Donate
+</a>
 
         <a class="link" href="https://starkeverything.com" target="_blank">
             <i class="fas fa-space-shuttle"></i>Loja DexZ Bot
