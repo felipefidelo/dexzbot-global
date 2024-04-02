@@ -106,6 +106,19 @@
         <div id="stars3"></div>
     </section>
 
+<style>
+    /* Define a animação de rotação */
+    @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Aplica a animação ao ícone quando o mouse passar sobre o botão */
+    .link:hover .fa-handshake {
+        animation: rotate 2s infinite linear;
+    }
+</style>
+
     <!-- Restante do conteúdo do seu site -->
     <div id="profilePictureContainer">
         <a id="profilePicture" href="#popup">
