@@ -1,37 +1,34 @@
-ip<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta name="google-site-verification" content="pngA9-RLOHHTw3YWZo_GRbKPntjZ3tLrsoc_xMp2H5A" />
+    <meta name="google-site-verification" content="pngA9-RLOHHTw3YWZo_GRbKPntjZ3tLrsoc_xMp2H5A" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Felipe Fidelo</title>
-    <!-- Favicon -->
     <link rel="icon" href="https://telegra.ph/file/ff1a792d6b491f260a2b4.jpg" type="image/x-icon" />
-    <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <!-- Core theme CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Script do ElfSight -->
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
     <style>
-        /* Estilo para a caixa de mensagem */
-        html, body {
+        /* Estilo geral */
+        body {
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1c1c1c, #3a3a3a);
+            color: white;
+            overflow: hidden;
         }
 
+        /* Estilo para a caixa de mensagem */
         .welcome-message {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente preto */
-            z-index: 9999; /* Para garantir que a mensagem esteja acima de todos os outros elementos */
-            display: none; /* Por padrão, a mensagem estará oculta */
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: none;
         }
 
-        /* Estilos adicionais para a caixa de mensagem */
         .welcome-message-content {
             position: absolute;
             top: 50%;
@@ -54,148 +51,159 @@ ip<!DOCTYPE html>
             cursor: pointer;
         }
 
+        /* Estilo do perfil */
+        #profilePictureContainer {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #profilePicture img {
+            width: 150px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        #profilePicture img:hover {
+            transform: scale(1.1);
+        }
+
+        #userName {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        /* Estilo dos links */
         .button-container {
             text-align: center;
             margin-top: 20px;
         }
 
-        .button-container .link {
-    /* margin: 0 10px; */
-    display: block; /* Alteração aqui */
-    text-decoration: none;
-    color: white;
-    padding: 10px 20px;
-    border: 2px solid white;
-    border-radius: 5px;
-}
-
-        #hashtag {
-            text-align: center;
-            margin-top: 20px;
+        .link {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
         }
 
-    <!-- Parallax Pixel Background Animation -->
-    <section class="animated-background">
-        <div id="stars1"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-    </section>
-    <!-- End of Parallax Pixel Background Animation -->
+        .link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
 
+        /* Estilo da gaveta */
+        .drawer {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .drawer-button {
+            cursor: pointer;
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Animação de fundo com estrelas */
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        #stars1, #stars2, #stars3 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://example.com/stars.png') repeat;
+            animation: move 20s linear infinite;
+        }
+
+        @keyframes move {
+            from { background-position: 0 0; }
+            to { background-position: 100% 100%; }
+        }
     </style>
 </head>
 <body>
-    <!-- Caixa de mensagem de boas-vindas -->
     <div class="welcome-message" id="welcomeMessage">
         <div class="welcome-message-content">
             <h2>Olá Curioso! 🛸</h2>
-            <p style="color: white;">Aqui Você terá informações extras sobre mim.</p>
+            <p>Aqui Você terá informações extras sobre mim.</p>
             <button onclick="closeWelcomeMessage()">Fechar</button>
         </div>
     </div>
 
-    <!-- Áudio de fundo -->
-    <audio id="backgroundAudio" loop>
+    <audio id="backgroundAudio " loop>
         <source src="musga.mp3" type="audio/mpeg">
         Seu navegador não suporta o elemento de áudio.
     </audio>
 
-    <!-- Animação de fundo com estrelas -->
-    <section class="animated-background">
+    <div class="animated-background">
         <div id="stars1"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>
-    </section>
+    </div>
 
-<style>
-    /* Define a animação de rotação */
-    @keyframes rotate {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-
-    /* Aplica a animação ao ícone quando o mouse passar sobre o botão */
-    .link:hover .fa-handshake {
-        animation: rotate 2s infinite linear;
-    }
-</style>
-
-    <!-- Restante do conteúdo do seu site -->
     <div id="profilePictureContainer">
         <a id="profilePicture" href="#popup">
             <img src="https://telegra.ph/file/69908863c2da186c45f24.jpg" alt="Profile Picture">
         </a>
-
-        <div class="overlay" id="popup">
-            <div class="popup">
-                <div class="popup-photo">
-                    <a href="https://telegra.ph/file/739dc388fc45e87b50b80.jpg" target="_blank">
-                        <img src="https://telegra.ph/file/739dc388fc45e87b50b80.jpg" alt="Profile Picture">
-                    </a>
-                </div>
-                <div class="popup-quote">
-                    Olá, meu nome é Felipe Fidelo, e sou desenvolvedor da Luna World. Para quem tá chegando agora, saiba que esse projeto existe desde 2020, sempre inovando e buscando atingir o melhor. Luna está hospedado em um servidor pago,para mantê-lo online 24 horas por dia. Caso queira dar uma ajudinha e colaborar para a existência e funcionamento do bot, você pode fazer um donate😉.
-
-Por: Felipe Fidelo📌
-                </div>
-                <a class="popup-close" onclick="history.back()">&times;</a>
-            </div>
-        </div>
     </div>
 
     <div id="userName">
         Felipe Fidelo
     </div>
 
-    <div id="links" class="button-container">
+    <div class="button-container">
         <a class="link" href="https://instagram.com/fidelo34k" target="_blank">
             <i class="fab fa-instagram">&nbsp;</i>Felipe Fidelo
         </a>
 
-           
+        <div class="drawer-button" onclick="toggleDrawer('partnershipDrawer')">Parceria?</div>
+        <div class="drawer" id="partnershipDrawer">
+            <p>Entre em contato para parcerias e colaborações!</p>
+        </div>
 
-<a class="link" href="https://instagram.com/fidelo34k" target="_blank">
-    <i class="fas fa-handshake"></i> Parceria?
-</a>
         <a class="link" href="https://chat.whatsapp.com/IPM4aLT39yd1buNLcHNdRU" target="_blank">
             <i class="fab fa-whatsapp">&nbsp;</i>Sinais 24H | Whatsapp
         </a>
 
-         <a class="link" href="https://t.me/+dNBk7KTiwSE0YTQx" target="_blank">
+        <a class="link" href="https://t.me/+dNBk7KTiwSE0YTQx" target="_blank">
             <i class="fab fa-telegram">&nbsp;</i>Sinais 24H | Telegram
         </a>
 
-    
         <a class="link" href="#" onclick="copyPixKey()">
-    <i class="fas fa-donate"></i>Donate
-</a>
-
-        
+            <i class="fas fa-donate"></i>Donate
+        </a>
     </div>
 
     <div id="hashtag">
         Beijo na bunda de quem leu!
     </div>
 
-    <!-- Função para copiar a chave Pix -->
     <script>
-        // Função para exibir a mensagem de boas-vindas
         function showWelcomeMessage() {
             document.getElementById("welcomeMessage").style.display = "block";
         }
 
-        // Função para fechar a mensagem de boas-vindas e iniciar a música
         function closeWelcomeMessage() {
             document.getElementById("welcomeMessage").style.display = "none";
             document.getElementById("backgroundAudio").play();
         }
 
-        // Exibir a mensagem de boas-vindas quando o site for carregado
         window.onload = function() {
             showWelcomeMessage();
         };
 
-        // Função para copiar a chave Pix
         function copyPixKey() {
             var pixKey = "fa0cbdb8-6617-491f-94e9-9bba31183e58";
             navigator.clipboard.writeText(pixKey)
@@ -205,6 +213,15 @@ Por: Felipe Fidelo📌
                 .catch(err => {
                     console.error('Erro ao copiar a chave Pix: ', err);
                 });
+        }
+
+        function toggleDrawer(drawerId) {
+            var drawer = document.getElementById(drawerId);
+            if (drawer.style.display === "none" || drawer.style.display === "") {
+                drawer.style.display = "block";
+            } else {
+                drawer.style.display = "none";
+            }
         }
     </script>
 </body>
